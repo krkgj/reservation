@@ -118,7 +118,7 @@ public class ReservationController {
             svo.setTwentyOneToTwentyTwo(1);
          }
       }
-      
+       테스트@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         if (reservationTime.length == 1) { reservationTime[0] =
         dtsconverter.datetostringConverter(reserveStartTime) + " " +
         reservationTime[0];
