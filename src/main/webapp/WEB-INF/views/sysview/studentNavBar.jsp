@@ -41,7 +41,7 @@
               <li><a href="/user/logout"><button>로그아웃</button></a></li>    
            </ul>
            <ul class="nav navbar-nav navbar-right">
-              <li><a href=""><span>${uname}</span>님, 환영합니다.</a></li>    
+              <li><a href="/sysview/userinfo"><span>${uname}</span>님, 환영합니다.</a></li>    
            </ul>
         </div>
     </nav>

@@ -49,7 +49,6 @@ public class ReservationController {
       String[] reservationTime = dto.getReservateTime();
       
       svo = rservice.SeatStatus(seat); // seat에 해당하는 좌석의 상태를 받아서 svo 객체에 할당
-      
       for(int i = 0; i<reservationTime.length; i++) // reservationTime의 길이만큼 반복문을 통해 시간에 해당하는 필드의 값을 1로 설정.
       {
          System.out.println(reservationTime[i]);
@@ -120,24 +119,26 @@ public class ReservationController {
             svo.setTwentyOneToTwentyTwo(1);
          }
       }
-      
       rservice.updateSeatStatus(svo);
       
-        if (reservationTime.length == 1) { reservationTime[0] =
-        dtsconverter.datetostringConverter(reserveStartTime) + " " +
-        reservationTime[0];
+      
+      if (reservationTime.length == 1) { 
+    	  reservationTime[0] = dtsconverter.datetostringConverter(reserveStartTime) + " " + reservationTime[0];
+    	  
+    	  reserveStartTime = stdconverter.stringtodateConverter(reservationTime[0]);
+    	  reserveEndTime = stdconverter.stringtodateConverter(reservationTime[0]); 
+        } else { 
+        	reservationTime[0] = dtsconverter.datetostringConverter(reserveStartTime) + reservationTime[0];
         
-        reserveStartTime = stdconverter.stringtodateConverter(reservationTime[0]);
-        reserveEndTime = stdconverter.stringtodateConverter(reservationTime[0]); }
-        else { reservationTime[0] =
-        dtsconverter.datetostringConverter(reserveStartTime) + reservationTime[0];
+        	for (int i = 1; i < reservationTime.length; i++) { 
+        		reservationTime[1] = reservationTime[i]; 
+        	}
         
-        for (int i = 1; i < reservationTime.length; i++) { reservationTime[1] =
-        reservationTime[i]; } reservationTime[1] =
-        dtsconverter.datetostringConverter(reserveStartTime) + reservationTime[1];
+        	reservationTime[1] = dtsconverter.datetostringConverter(reserveStartTime) + reservationTime[1];
         
-        reserveStartTime = stdconverter.stringtodateConverter(reservationTime[0]);
-        reserveEndTime = stdconverter.stringtodateConverter(reservationTime[1]); }
+        	reserveStartTime = stdconverter.stringtodateConverter(reservationTime[0]);
+        	reserveEndTime = stdconverter.stringtodateConverter(reservationTime[1]); 
+        }
        
       
         rvo.setUname(uname); rvo.setUnumber(unumber); rvo.setSeat(seat);
