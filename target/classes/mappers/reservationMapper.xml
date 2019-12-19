@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.ReservationMapper">
+
+<insert id="reservation">
+insert into reservation values(#{uname} ,#{unumber} , #{reserveStartTime} ,DATE_ADD(#{reserveEndTime},INTERVAL 1 HOUR), #{seat})
+ </insert>
+
+
+<select id="duplicateCheck" resultType="int">
+<![CDATA[SELECT COUNT(SEAT) FROM reservation WHERE reserveStartTime <= DATE_ADD(#{reserveEndTime}, INTERVAL 1 HOUR) AND reserveEndTime >= #{reserveStartTime}  AND SEAT=#{seat}]]>
+</select>
+
+
+<select id="seatstatus" resultType="SeatVO">
+select * from reservation_seat where seat = #{seat}   
+<!-- reservation_seat 테이블에 담긴 데이터를 모두 가져오는데 라디오버튼을 클릭한 좌석의 컬럼만을 가져오기 위한 쿼리를 DAO 에서 받은 seat 변수를 이용하여 실행합니다. -->
+</select>
+
+<update id="setseatstatus">
+update reservation_seat set NineToTen = #{NineToTen}, TenToEleven = #{TenToEleven}, ElevenToTwelve = #{ElevenToTwelve}, TwelveThirteen = #{TwelveThirteen},
+ThirteenToFourteen = #{ThirteenToFourteen}, FifteenToSixteen = #{FifteenToSixteen}, SixteenToSeventeen = #{SixteenToSeventeen}, SeventeenToEightteen = #{SeventeenToEightteen},
+EightteenToNineteen = #{EightteenToNineteen}, NineteenToTwenty = #{NineteenToTwenty}, TwentyToTwentyOne = #{TwentyToTwentyOne},
+TwentyOneToTwentyTwo = #{TwentyOneToTwentyTwo} where seat = #{seat}
+</update>
+
+</mapper>	
