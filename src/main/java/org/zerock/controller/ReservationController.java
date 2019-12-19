@@ -39,9 +39,12 @@ public class ReservationController {
       String uname = (String) session.getAttribute("uname");
       String unumber = (String) session.getAttribute("unumber");
       String seat = dto.getSeat();
-
+      
+      
       Date reserveStartTime = new Date();
       Date reserveEndTime = new Date();
+      
+      System.out.println(reserveStartTime);
 
       DateToStringConverter dtsconverter = new DateToStringConverter();
       StringToDateConverter stdconverter = new StringToDateConverter();
@@ -139,7 +142,7 @@ public class ReservationController {
         	reserveStartTime = stdconverter.stringtodateConverter(reservationTime[0]);
         	reserveEndTime = stdconverter.stringtodateConverter(reservationTime[1]); 
         }
-       
+      
       
         rvo.setUname(uname); rvo.setUnumber(unumber); rvo.setSeat(seat);
         rvo.setReserveStartTime(reserveStartTime);
@@ -151,6 +154,9 @@ public class ReservationController {
         System.out.println("예약 종료 시간 + 1 : " + rvo.getReserveEndTime());
         System.out.println("예약 좌석 : " + rvo.getSeat());
         
+        session.setAttribute("reserveStartTime", reserveStartTime);
+        session.setAttribute("reserveEndTime", reserveEndTime);
+        session.setAttribute("seat", seat);
         
         int result = rservice.duplicateCheck(rvo);
         

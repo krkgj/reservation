@@ -100,7 +100,11 @@ public class UserPageController {
 		return test; 
 	}
 	
-	//public void showUserInfo
+	@RequestMapping(value = "showuserinfo", method = RequestMethod.GET)
+	public void showUserInfo()
+	{
+		
+	}
 	
 	
 	 

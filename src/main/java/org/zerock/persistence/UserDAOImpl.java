@@ -2,6 +2,7 @@ package org.zerock.persistence;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -30,6 +31,19 @@ public class UserDAOImpl implements UserDAO {
 
     return session.selectOne(namespace +".checkUserWithSessionKey", value);
   }	
+  
+  /* Ãß°¡ */
+  @Override
+  public List<UserVO> membership() throws Exception {
+     // TODO Auto-generated method stub
+  return session.selectList(namespace +".membership");
+  }
+   
+  @Override
+  public void memberDelete(String unumber) throws Exception {
+     // TODO Auto-generated method stub
+   session.delete(namespace + ".memberDelete", unumber);
+  }
   
 
 }

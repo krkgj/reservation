@@ -1,6 +1,7 @@
 package org.zerock.service;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -25,5 +26,15 @@ public class UserServiceImpl implements UserService {
   public UserVO checkLoginBefore(String value) {
     
     return dao.checkUserWithSessionKey(value);
+  }
+  
+  @Override
+  public List<UserVO> membership() throws Exception {
+     return dao.membership();
+  }
+
+  @Override
+  public void memberDelete(String unumber) throws Exception{
+     dao.memberDelete(unumber);
   }
 }
