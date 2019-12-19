@@ -48,7 +48,9 @@ public class ReservationController {
 
       String[] reservationTime = dto.getReservateTime();
       
-      for(int i = 0; i<reservationTime.length; i++)
+      svo = rservice.SeatStatus(seat); // seat에 해당하는 좌석의 상태를 받아서 svo 객체에 할당
+      
+      for(int i = 0; i<reservationTime.length; i++) // reservationTime의 길이만큼 반복문을 통해 시간에 해당하는 필드의 값을 1로 설정.
       {
          System.out.println(reservationTime[i]);
          
@@ -118,7 +120,9 @@ public class ReservationController {
             svo.setTwentyOneToTwentyTwo(1);
          }
       }
-       테스트@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+      
+      rservice.updateSeatStatus(svo);
+      
         if (reservationTime.length == 1) { reservationTime[0] =
         dtsconverter.datetostringConverter(reserveStartTime) + " " +
         reservationTime[0];

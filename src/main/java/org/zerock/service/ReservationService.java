@@ -11,6 +11,7 @@ public interface ReservationService {
 	public void reservationSeat(ReservationVO rvo);
 	public int duplicateCheck(ReservationVO rvo);
 	public SeatVO SeatStatus(String sno);
+	public void updateSeatStatus(SeatVO svo);
 }
 
 

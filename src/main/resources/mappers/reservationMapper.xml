@@ -20,7 +20,7 @@ select * from reservation_seat where seat = #{seat}
 <!-- reservation_seat 테이블에 담긴 데이터를 모두 가져오는데 라디오버튼을 클릭한 좌석의 컬럼만을 가져오기 위한 쿼리를 DAO 에서 받은 seat 변수를 이용하여 실행합니다. -->
 </select>
 
-<update id="setseatstatus">
+<update id="updateseatstatus">
 update reservation_seat set NineToTen = #{NineToTen}, TenToEleven = #{TenToEleven}, ElevenToTwelve = #{ElevenToTwelve}, TwelveThirteen = #{TwelveThirteen},
 ThirteenToFourteen = #{ThirteenToFourteen}, FifteenToSixteen = #{FifteenToSixteen}, SixteenToSeventeen = #{SixteenToSeventeen}, SeventeenToEightteen = #{SeventeenToEightteen},
 EightteenToNineteen = #{EightteenToNineteen}, NineteenToTwenty = #{NineteenToTwenty}, TwentyToTwentyOne = #{TwentyToTwentyOne},

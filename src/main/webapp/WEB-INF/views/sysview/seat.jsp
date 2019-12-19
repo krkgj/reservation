@@ -14,8 +14,8 @@
 <body>
 	<%@ include file="./studentNavBar.jsp" %>
     <!-- 2개만 체크되게 하기 -->
- <!--    <script>
-    <!--    function count_ck(obj){
+    <script>
+       function count_ck(obj){
       var chkbox = document.getElementsByName("reservateTime");
       var chkCnt = 0;
       for(var i=0;i<chkbox.length; i++){
@@ -32,7 +32,7 @@
      }
     </script>
     
-    라디오버튼클릭시 발생 이벤트
+    <!-- 라디오버튼클릭시 발생 이벤트 -->
 	<script>
 	$(function(){
 		  $('input[type="radio"]').click(function(){  /* 선택자를 이용해서 속성이'input[type="radio"] 인 것들을 클릭하면 함수를 실행한다. */
@@ -153,13 +153,13 @@
 		    	    });
 		    }
 		  });
-		});	 -->
-		
-      -->
+		});	
+		</script>
+     
 	
      <!-- 시간예약 -->
      <div>
-     <form class="box" action="/reservation/reservation" method="POST">
+     <form class="box" action="/reservation/reservation" method="post">
     
     <section class="container" align="center" style="margin-top:80px">
        <div class="well"><h2>시간 예약<small>(좌석)</small></h2></div>    
@@ -266,14 +266,18 @@
     	<div  align="center">
              <input type="submit" name="reservation" value="예약하기">
      	</div>
+     	
+ 
+             
     </form>
     </div>
     
       			<!-- 테스트를 위해 만든 임시 코드 -->
-			<!-- <form action="/sysview/test" method="Get">
+			<form action="/sysview/test" method="Get">
 				<div align="left">
      				<input type="submit" name="test" value="바코드 생성 테스트버튼">
-			</form> -->
+     			</div>
+			</form>
 			    <!-- 테스트를 위해 만든 임시 코드 -->
 				
 		    	

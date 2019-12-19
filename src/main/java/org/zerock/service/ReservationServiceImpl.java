@@ -25,13 +25,20 @@ public class ReservationServiceImpl implements ReservationService {
 	@Override
 	public SeatVO SeatStatus(String sno)
 	{
-		System.out.println("service가 호출되었습니다 좌석 번호 : "+sno);
-		return rdao.SeatStatus(sno); /* 컨트롤러에서 받은 좌석번호가 담긴 sno 변수를 rdao.SeatStatus 로 넘깁니다. */
+		System.out.println("service : "+sno);
+		return rdao.SeatStatus(sno); 
 	}
 	
 	@Override
-	   public int duplicateCheck(ReservationVO rvo)
-	   {
-	      return rdao.duplicateCheck(rvo);
-	   }
+	public int duplicateCheck(ReservationVO rvo)
+	{
+		return rdao.duplicateCheck(rvo);
+	}
+	
+	@Override
+	public void updateSeatStatus(SeatVO svo)
+	{
+		rdao.updateSeatStatus(svo);
+	}
+	
 }
