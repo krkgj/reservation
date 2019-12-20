@@ -27,6 +27,7 @@ EightteenToNineteen = #{EightteenToNineteen}, NineteenToTwenty = #{NineteenToTwe
 TwentyOneToTwentyTwo = #{TwentyOneToTwentyTwo} where seat = #{seat}
 </update>
 
-<update id="resetseatstatus"></update>
+
+
 
 </mapper>	

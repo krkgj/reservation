@@ -37,9 +37,7 @@ public class ReservationDAOImpl implements ReservationDAO {
 	@Override
 	public SeatVO SeatStatus(String sno)
 	{
-		System.out.println("dao : "+ sno);
 		SeatVO svo = session.selectOne(namespace+ ".seatstatus" , sno);
-		System.out.println("DB : "+svo.getSeat());
 		return svo;  
 		
 	}
@@ -56,7 +54,6 @@ public class ReservationDAOImpl implements ReservationDAO {
 	@Override
 	public void updateSeatStatus(SeatVO svo)
 	{
-		System.out.println("updateSeatStatus 실행됨!"+ svo.getNineToTen());
 		session.selectOne(namespace + ".updateseatstatus", svo);	
 	}
 }

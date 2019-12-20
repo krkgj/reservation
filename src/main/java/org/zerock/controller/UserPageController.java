@@ -1,11 +1,12 @@
 package org.zerock.controller;
 
-
 import java.io.DataOutputStream;
 import java.io.IOException;   
 import java.io.OutputStream;  
 import java.net.ServerSocket;
-import java.net.Socket; 
+import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import javax.inject.Inject;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,7 +77,6 @@ public class UserPageController {
 	@RequestMapping(value = "/status/{seat}", method = RequestMethod.GET)
 	@ResponseBody
 	public String SeatStatus(@PathVariable("seat") String seat, Model model, HttpSession session) {
-		System.out.println("status : " + seat ); 
 			
 			SeatVO VO = service.SeatStatus(seat); 
 			String [] a= new String[13];
@@ -99,45 +100,23 @@ public class UserPageController {
 		return test; 
 	}
 	
-	@RequestMapping(value = "/showuserinfo", method = RequestMethod.GET)
-	public void showUserInfo()
+	@RequestMapping(value = "/userinfo", method = RequestMethod.GET)
+	public void showUserInfo(HttpSession session, Model model)
 	{
 		
+		  Date reserveStartTime = (Date)session.getAttribute("reserveStartTime");
+		  Date reserveEndTime = (Date)session.getAttribute("reserveEndTime");
+		  
+		  SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+			
+		  String rST = formatter.format(reserveStartTime);
+		  String rET = formatter.format(reserveEndTime);
+		  
+		  model.addAttribute("reserveStartTime", rST);
+		  model.addAttribute("reserveEndTime", rET);
 	}
 	
 	
 	 
-	  @RequestMapping(value = "/test", method = RequestMethod.GET)
-	  public void test(ReservationVO vo, HttpSession session, Model model) {			  		  
-		  int certNumLength = 8;
-		  
-		  Random random = new Random(System.currentTimeMillis());
-		  
-		  
-	        int range = (int)Math.pow(10,certNumLength);
-	        int trim = (int)Math.pow(10, certNumLength-1);
-	        int result = random.nextInt(range)+trim;
-	         
-	        if(result>range){
-	            result = result - trim;
-	        }
-	        session.setAttribute("qrcode",String.valueOf(result));
-	        System.out.println("발생한 난수? : "+String.valueOf(result));
-	        
-	        ServerSocket server_socket = null; 
-	        Socket socket = null; 
-	        
-	        try{
-	            server_socket = new ServerSocket(8080);	            
-	        }catch(IOException e){
-	            System.out.println("123123");
-	        }
-	        try {
-	        	socket = server_socket.accept();   
-	        	 OutputStream out = socket.getOutputStream(); 
-	        	 DataOutputStream dos = new DataOutputStream(out);
-	        	 dos.writeUTF(String.valueOf(result));
-	        	 dos.close();
-	        }catch(IOException e){}	        
-	  }		  
+  
 }

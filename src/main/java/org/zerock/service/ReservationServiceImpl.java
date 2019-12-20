@@ -25,7 +25,6 @@ public class ReservationServiceImpl implements ReservationService {
 	@Override
 	public SeatVO SeatStatus(String sno)
 	{
-		System.out.println("service : "+sno);
 		return rdao.SeatStatus(sno); 
 	}
 	

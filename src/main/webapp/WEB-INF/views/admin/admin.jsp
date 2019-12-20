@@ -1,21 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset-UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<title>°ü¸®ÀÚÃ¢</title>
+<title>ê´€ë¦¬ìžì°½</title>
 </head>
 <body>
 <%@ include file="./adminNavbar.jsp" %>
 	     
 	     <div class="container" style="margin-top:80px">
 			  <div class="jumbotron">
-			    <h1>°ü¸®ÀÚÃ¢</h1>
+			    <h1>ê´€ë¦¬ìžì°½</h1>
 			  </div>      
 	     </div>
 	     

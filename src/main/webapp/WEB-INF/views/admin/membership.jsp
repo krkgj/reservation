@@ -10,21 +10,21 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<title>100È£½Ç ¿¹¾à½Ã½ºÅÛ</title>
+<title>100í˜¸ì‹¤ ì˜ˆì•½ì‹œìŠ¤í…œ</title>
 </head>
 <body> 
 
 <%@ include file="./adminNavbar.jsp" %>
 	      
 	     <div class="container" style="margin-top:80px">
-			  <h2>È¸¿ø¸ñ·Ï</h2>           
+			  <h2>íšŒì›ëª©ë¡</h2>           
 			  <table class="table table-striped">
 			    <thead>
 			      <tr>
-			        <th>ÀÌ¸§</th>
-			        <th>ÇÐ¹ø</th>
-			        <th>¼öÁ¤</th>
-			        <th>»èÁ¦</th>
+			        <th>ì´ë¦„</th>
+			        <th>í•™ë²ˆ</th>
+			        <th>ìˆ˜ì •</th>
+			        <th>ì‚­ì œ</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -40,21 +40,21 @@
 </body>
 </html> --%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset-UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<title>100È£½Ç ¿¹¾à½Ã½ºÅÛ</title>
+<title>100í˜¸ì‹¤ ì˜ˆì•½ì‹œìŠ¤í…œ</title>
 </head>
       
 <body> 
@@ -62,14 +62,14 @@
 <%@ include file="./adminNavbar.jsp" %>
          
         <div class="container" style="margin-top:80px">
-           <h2>È¸¿ø¸ñ·Ï</h2>           
+           <h2>íšŒì›ëª©ë¡</h2>           
            <table class="table table-striped">
              <thead>
                <tr>
-                 <th>ÀÌ¸§</th>
-                 <th>ÇÐ¹ø</th>
-                 <!-- <th>¼öÁ¤</th>  -->
-                 <th>»èÁ¦</th>
+                 <th>ì´ë¦„</th>
+                 <th>í•™ë²ˆ</th>
+                 <!-- <th>ìˆ˜ì •</th>  -->
+                 <th>ì‚­ì œ</th>
                </tr>
              </thead>
              <tbody>
@@ -77,7 +77,7 @@
                 <tr>
                    <td>${UserVO.uname}</td>
                    <td>${UserVO.unumber}</td>
-                   <td><a href="/admin/memberDelete/${UserVO.unumber}">»èÁ¦</a></td>
+                   <td><a href="/admin/memberDelete/${UserVO.unumber}">ì‚­ì œ</a></td>
                 </tr>   
                 </c:forEach>
              </tbody>
