@@ -162,8 +162,11 @@ public class ReservationController {
         
         if(result == 0) { 
            rservice.reservationSeat(rvo);
-        
 		}
+        else
+        {
+        	
+        }
    }
 
 }

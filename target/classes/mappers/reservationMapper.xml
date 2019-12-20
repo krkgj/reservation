@@ -22,9 +22,11 @@ select * from reservation_seat where seat = #{seat}
 
 <update id="updateseatstatus">
 update reservation_seat set NineToTen = #{NineToTen}, TenToEleven = #{TenToEleven}, ElevenToTwelve = #{ElevenToTwelve}, TwelveThirteen = #{TwelveThirteen},
-ThirteenToFourteen = #{ThirteenToFourteen}, FifteenToSixteen = #{FifteenToSixteen}, SixteenToSeventeen = #{SixteenToSeventeen}, SeventeenToEightteen = #{SeventeenToEightteen},
+ThirteenToFourteen = #{ThirteenToFourteen}, FourteenToFifteen = #{FourteenToFifteen}, FifteenToSixteen = #{FifteenToSixteen}, SixteenToSeventeen = #{SixteenToSeventeen}, SeventeenToEightteen = #{SeventeenToEightteen},
 EightteenToNineteen = #{EightteenToNineteen}, NineteenToTwenty = #{NineteenToTwenty}, TwentyToTwentyOne = #{TwentyToTwentyOne},
 TwentyOneToTwentyTwo = #{TwentyOneToTwentyTwo} where seat = #{seat}
 </update>
+
+<update id="resetseatstatus"></update>
 
 </mapper>	

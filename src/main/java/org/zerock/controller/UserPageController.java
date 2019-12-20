@@ -95,12 +95,11 @@ public class UserPageController {
 			a[12]=VO.getTwentyOneToTwentyTwo().toString();
 			
 			 Gson gson = new Gson(); 
-			 String test = gson.toJson(a); 
-			 System.out.println(test);
+			 String test = gson.toJson(a);
 		return test; 
 	}
 	
-	@RequestMapping(value = "showuserinfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/showuserinfo", method = RequestMethod.GET)
 	public void showUserInfo()
 	{
 		
