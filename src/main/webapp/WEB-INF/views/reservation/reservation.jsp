@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="/resources/qrcode/qrcode.js"></script>
 	<link rel = "shortcut icon" type = "image/png" href="/resources/image/Hansei.png"/>  <!-- favicon 추가 부분입니다. -->
@@ -16,14 +17,34 @@
 		/* session에 저장되어있는 "qrcode" 를 꺼내 qrcode를 생성해줍니다. */
 		var value = '<%=session.getAttribute("qrcode")%>';  
     	var qrcode = new QRCode(document.getElementById("qrcode"), {
+=======
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="/resources/qrcode/qrcode.js"></script>
+   <link rel = "shortcut icon" type = "image/png" href="/resources/image/Hansei.png"/>  <!-- favicon 추가 부분입니다. -->
+<title>예약완료</title>
+</head>
+<body>
+
+      <div id="qrcode" align="center"></div>
+      
+      <script type="text/javascript">
+      /* session에 저장되어있는 "qrcode" 를 꺼내 qrcode를 생성해줍니다. */
+      var value = '<%=session.getAttribute("qrcode")%>';  
+       var qrcode = new QRCode(document.getElementById("qrcode"), {
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
         text: value,
         width: 512,
         height: 512,
         colorDark : "#000000",
         colorLight : "#ffffff",
         correctLevel : QRCode.CorrectLevel.H
+<<<<<<< HEAD
     	});
     	</script>
+=======
+       });
+       </script>
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
     
 </body>
 </html>

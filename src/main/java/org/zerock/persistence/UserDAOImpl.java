@@ -46,6 +46,7 @@ public class UserDAOImpl implements UserDAO {
    session.delete(namespace + ".memberDelete", unumber);
   }
   
+<<<<<<< HEAD
   @Override
   public ReservationVO UserCancel(String uname) { // 예약테이블에 현재 접속한 사용자의 이름이 존재하는지 검사
      return session.selectOne(namespace + ".usercancel", uname);
@@ -63,5 +64,7 @@ public class UserDAOImpl implements UserDAO {
 //		return session.selectOne(namespace + ".usercancel", uname);
 //	
 //	}
+=======
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 
 }

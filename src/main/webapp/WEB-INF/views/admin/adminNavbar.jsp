@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset-UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale="1">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -13,33 +13,38 @@
 <title>Insert title here</title>
 </head>
 <body>
-     <!-- ¿©±â°¡ »ó´Ü ³×ºñ°ÔÀÌ¼Ç ¹Ù -->
+     <!-- ì—¬ê¸°ê°€ ìƒë‹¨ ë„¤ë¹„ê²Œì´ì…˜ ë°” -->
 	    <nav class="navbar navbar-inverse navbar-fixed-top">
 	       <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed"
 	               data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
 	               aria-expanded="false">
-	               <span class="icon-bar"></span>  <!--ÇÏ³ªÀÇ Â¦´ë±â·Î »ý°¢ÇÏ¸é µÈ´Ù.-->
+	               <span class="icon-bar"></span>  <!--í•˜ë‚˜ì˜ ì§ëŒ€ê¸°ë¡œ ìƒê°í•˜ë©´ ëœë‹¤.-->
 	               <span class="icon-bar"></span>
 	               <span class="icon-bar"></span>
 	           </button>
-	           <a class="navbar-brand" href="/admin/admin">100È£½Ç ¿¹¾à ½Ã½ºÅÛ</a>
+	           <a class="navbar-brand" href="/admin/admin">100í˜¸ì‹¤ ì˜ˆì•½ ì‹œìŠ¤í…œ</a>
 	       </div>
 	       <div class ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	           <ul class="nav navbar-nav navbar-left">
 	              <li class="dropdown">
 	                 <a href="#" class="dropdown-toggle"
 	                    data-toggle="dropdown" role="button" aria-haspopup="true"
-	                    aria-expanded="false">°ü¸®ÀÚÃ¢<span class="caret"></span></a>
+	                    aria-expanded="false">ê´€ë¦¬ìžì°½<span class="caret"></span></a>
 	                 <ul class="dropdown-menu">
+<<<<<<< HEAD
 	                     <li class="active"><a href="/admin/cancel">¿¹¾àÃë¼Ò</a></li>
 	                     <li><a href="/admin/membership">È¸¿øÁ¤º¸ »èÁ¦</a></li>
 	                     <li><a href="/admin/seatedit">ÀÌ¿ëÁÂ¼® ÆíÁý</a></li> 
+=======
+	                     <li class="active"><a href="/admin/cancel">ì˜ˆì•½ì·¨ì†Œ</a></li>
+	                     <li><a href="/admin/membership">íšŒì›ì •ë³´ ì‚­ì œ</a></li>
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 	                 </ul>
 	           </ul>
 	             <ul class="nav navbar-nav navbar-right">
-              <li><a href=""><span>${admin}</span>´Ô, È¯¿µÇÕ´Ï´Ù.</a></li>    
-              <li><a href="/user/logout"><button>·Î±×¾Æ¿ô</button></a></li>  
+              <li><a href=""><span>${admin}</span>ë‹˜, í™˜ì˜í•©ë‹ˆë‹¤.</a></li>    
+              <li><a href="/user/logout"><button>ë¡œê·¸ì•„ì›ƒ</button></a></li>  
            </ul>
            </div>
 	     </nav>

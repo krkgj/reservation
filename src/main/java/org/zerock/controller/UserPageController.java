@@ -1,16 +1,28 @@
 package org.zerock.controller;
 
+<<<<<<< HEAD
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+=======
+import java.io.DataOutputStream;
+import java.io.IOException;   
+import java.io.OutputStream;  
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -115,6 +127,7 @@ public class UserPageController {
 			a[12]=VO.getTwentyOneToTwentyTwo().toString();
 			
 			 Gson gson = new Gson(); 
+<<<<<<< HEAD
 			 String test = gson.toJson(a); 
 
 		return test; 
@@ -146,6 +159,26 @@ public class UserPageController {
 		 String test = gson.toJson(a); 
 		 System.out.println(test);
 	return test; 
+=======
+			 String test = gson.toJson(a);
+		return test; 
+	}
+	
+	@RequestMapping(value = "/userinfo", method = RequestMethod.GET)
+	public void showUserInfo(HttpSession session, Model model)
+	{
+		
+		  Date reserveStartTime = (Date)session.getAttribute("reserveStartTime");
+		  Date reserveEndTime = (Date)session.getAttribute("reserveEndTime");
+		  
+		  SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+			
+		  String rST = formatter.format(reserveStartTime);
+		  String rET = formatter.format(reserveEndTime);
+		  
+		  model.addAttribute("reserveStartTime", rST);
+		  model.addAttribute("reserveEndTime", rET);
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 	}
 	
 	@RequestMapping(value = "showuserinfo", method = RequestMethod.GET)
@@ -154,6 +187,7 @@ public class UserPageController {
 		
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping(value = "usercancel", method = RequestMethod.GET) // 사용자 예약취소페이지 
 	public String cancel(HttpSession session,Model model)
 	{
@@ -286,4 +320,8 @@ public class UserPageController {
 		return "/sysview/UserCancelSuccess"; // 예약이 정상적으로 취소 될시에 알람창을 띄어주며 caution 페이지로 보내줍니다.
 	}
 
+=======
+	 
+  
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 }

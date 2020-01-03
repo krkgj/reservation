@@ -38,7 +38,12 @@ public class ReservationDAOImpl implements ReservationDAO {
 	public SeatVO SeatStatus(String sno)
 	{
 		SeatVO svo = session.selectOne(namespace+ ".seatstatus" , sno);
+<<<<<<< HEAD
 		return svo;  	
+=======
+		return svo;  
+		
+>>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 	}
 	
 	   
