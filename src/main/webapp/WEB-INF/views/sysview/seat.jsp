@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset-UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="css/bootstrap.css" />
-<link rel = "shortcut icon" type = "image/x-icon" href="./Hansei.png"/> <!-- favicon 부분입니다 -->
+<link rel = "shortcut icon" type = "image/png" href="/resources/image/Hansei.png"/>  <!-- favicon 추가 부분입니다. -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- jquery 사용을 위해 추가 -->
 <title>100호실 예약 시스템</title>
 </head>
@@ -45,170 +45,38 @@
 		    	       
 		    	        success: function(data){   // data 변수에 JSON 객체에  seat 예약현황을 나타내는 키 값의 문자열이 담겨져 있습니다.
 		    	        	    $('span').remove(); // 누를때마다 기존에 있던  <span> tag 들은 사라지고 새로운 좌석의 <span> tag 들이 나타납니다.
- 		    	      			 if(data.substr(2,1) == "0")
-		    	      			{ 		    	      			 		    	      				
- 		    	      				$(".time1").after("<span class='label label-success'>예약가능</span>");     	      				
-		    	      			}
- 		    	      			 else
- 		    	      			{
- 		    	      				$(".time1").after("<span class='label label-danger'> 예약불가</span>"); 		    	      			
- 		    	      			}
- 		    	      			 if(data.substr(6,1) == "0")
- 		    	      			{ 		    	      				 
-  		    	      				$(".time2").after("<span class='label label-success'> 예약가능</span>");  		    	      			
- 		    	      			}
-  		    	      			 else
-  		    	      			{
-  		    	      				$(".time2").after("<span class='label label-danger'> 예약불가</span>");  		    	      				
-  		    	      			}
- 		    	      			 if(data.substr(10,1) == "0")
- 		    	      			{ 		    	      				 
-  		    	      				$(".time3").after("<span class='label label-success'> 예약가능</span>");  		    	      		
- 		    	      			}
-  		    	      			 else
-  		    	      			{
-  		    	      				$(".time3").after("<span class='label label-danger'>  예약불가</span>");  		    	      		
-  		    	      			}
- 		    	      			 if(data.substr(14,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time4").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time4").after("<span class='label label-danger'> 예약불가</span>");   		    	      				
-   		    	      			}
- 		    	      			 if(data.substr(18,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time5").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time5").after("<span class='label label-danger'> 예약불가</span>");   		    	      			
-   		    	      			}
- 		    	      			 if(data.substr(22,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time6").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time6").after("<span class='label label-danger'> 예약불가</span>");   		    	      				
-   		    	      			}
- 		    	      			 if(data.substr(26,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time7").after("<span class='label label-success'> 예약가능</span>");   		    	      				 		    	      			
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time7").after("<span class='label label-danger'> 예약불가</span>");   		    	      			
-   		    	      			}
- 		    	      			 if(data.substr(30,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time8").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time8").after("<span class='label label-danger'> 예약불가</span>");   		    	      				
-   		    	      			}
- 		    	      			 if(data.substr(34,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time9").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time9").after("<span class='label label-danger'> 예약불가</span>");   		    	      				
-   		    	      			}
- 		    	      			 if(data.substr(38,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time10").after("<span class='label label-success'> 예약가능</span>");   		    	      			
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time10").after("<span class='label label-danger'> 예약불가</span>");   		    	      				
-   		    	      			}
- 		    	      			 if(data.substr(42,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time11").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time11").after("<span class='label label-danger'> 예약불가</span>");   		    	      			
-   		    	      			}
- 		    	      			 if(data.substr(46,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time12").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time12").after("<span class='label label-danger'> 예약불가</span>");   		  
-   		    	      			}
- 		    	      			 if(data.substr(50,1) == "0")
-  		    	      			{ 		    	      				 
-   		    	      				$(".time13").after("<span class='label label-success'> 예약가능</span>");   		    	      				
-  		    	      			}
-   		    	      			 else
-   		    	      			{
-   		    	      				$(".time13").after("<span class='label label-danger'> 예약불가</span>");   		    	      			
-   		    	      			}
+		    	        	    
+		                    var i = 2;
+		    		        var j = 1;
+		                     do{
+		                    	 
+		                    	 
+		                    	 if(data.substr(i,1) == "0") 
+                                 {    
+                                     $(".time"+j).after("<span class='label label-success'>예약가능</span>");   
+                                     $("#"+j).prop("disabled",false);
+                                 }
+                                   else
+                                  {
+                                     $(".time"+j).after("<span class='label label-danger'>예약불가</span>");
+                                     $("#"+j).prop("disabled",true);
+                                  }
+		                    	 i+=4;
+		                    	 j++;
+		                    	 
+		                    	 }while(j<14 && i < 51)
 		    	        }
 		    	    });
 		    }
 		  });
 		});	
 		</script>
-     
-	
-     <!-- 시간예약 -->
+
      <div>
-     <form class="box" action="/reservation/reservation" method="post">
-    
-    <section class="container" align="center" style="margin-top:80px">
-       <div class="well"><h2>시간 예약<small>(좌석)</small></h2></div>    
-     <div class ="row">      
-       <div class="checkbox col-md-2">
-         <label class="time1" ><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 09:00:00">09:00 ~ 10:00</label>        
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time2"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 10:00:00">10:00 ~ 11:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time3"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 11:00:00">11:00 ~ 12:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time4"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 12:00:00">12:00 ~ 13:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time5"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 13:00:00">13:00 ~ 14:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time6"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 14:00:00">14:00 ~ 15:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time7"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 15:00:00">15:00 ~ 16:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time8"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 16:00:00">16:00 ~ 17:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time9"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 17:00:00">17:00 ~ 18:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time10"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 18:00:00">18:00 ~ 19:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time11"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 19:00:00">19:00 ~ 20:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time12"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 20:00:00">20:00 ~ 21:00</label>
-       </div>
-       <div class="checkbox col-md-2">
-         <label class="time13"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value=" 21:00:00">21:00 ~ 22:00</label>
-       </div>
-      </div>
-    </section>
-    
+     <form class="box" action="/reservation/seatreservation" method="post">
     
      <!-- 이용 좌석 선택 -->
-       <section class="container" align="center">
+       <section class="container" align="center" style="margin-top:80px">
          <div class ="row"> 
              <div class = "well"><h2>이용 좌석 선택</h2></div>
           <div class = "col-md-3">
@@ -263,27 +131,61 @@
           </div> 
         </div>     
     </section>
+    
+    
+         <!-- 시간예약 -->
+        <section class="container" align="center" style="margin-top:20px">
+       <div class="well"><h2>시간 예약<small>(좌석)</small></h2></div>    
+     <div class ="row">      
+       <div class="checkbox col-md-2">
+         <label class="time1"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="09:00:00" id="1">09:00 ~ 10:00</label>        
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time2"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="10:00:00" id="2">10:00 ~ 11:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time3"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="11:00:00" id="3">11:00 ~ 12:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time4"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="12:00:00" id="4">12:00 ~ 13:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time5"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="13:00:00" id="5">13:00 ~ 14:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time6"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="14:00:00" id="6">14:00 ~ 15:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time7"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="15:00:00" id="7">15:00 ~ 16:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time8"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="16:00:00" id="8">16:00 ~ 17:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time9"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="17:00:00" id="9">17:00 ~ 18:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time10"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="18:00:00" id="10">18:00 ~ 19:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time11"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="19:00:00" id="11">19:00 ~ 20:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time12"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="20:00:00" id="12">20:00 ~ 21:00</label>
+       </div>
+       <div class="checkbox col-md-2">
+         <label class="time13"><input type="checkbox" name="reservateTime" onClick="count_ck(this);" value="21:00:00" id="13">21:00 ~ 22:00</label>
+       </div>
+      </div>
+    </section>
+    
     	<div  align="center">
              <input type="submit" name="reservation" value="예약하기">
      	</div>
-     	
- 
-             
+       
     </form>
     </div>
-    
-      			<!-- 테스트를 위해 만든 임시 코드 -->
-			<form action="/sysview/test" method="Get">
-				<div align="left">
-     				<input type="submit" name="test" value="바코드 생성 테스트버튼">
-     			</div>
-			</form>
-			    <!-- 테스트를 위해 만든 임시 코드 -->
-				
-		    	
-	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>	
- 
+    		    	
    <!-- The Carousel Plugin -->
    <div class="container">
      <h2>100호실 전경</h2>  
@@ -321,6 +223,9 @@
        </a>
      </div>
    </div>
-
+  
+  	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>	
+  
 </body>
 </html>

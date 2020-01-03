@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,29 +12,37 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.2/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel = "shortcut icon" type = "image/png" href="/resources/image/admin.png"/>  <!-- favicon 추가 부분입니다. -->
 <title>100호실 예약시스템</title>
 </head>
+      
 <body> 
 
 <%@ include file="./adminNavbar.jsp" %>
-	      
-	     <div class="container" style="margin-top:80px">
-			  <h2>회원목록</h2>           
-			  <table class="table table-striped">
-			    <thead>
-			      <tr>
-			        <th>이름</th>
-			        <th>학번</th>
-			        <th>수정</th>
-			        <th>삭제</th>
-			      </tr>
-			    </thead>
-			    <tbody>
-			    
-			    </tbody>
-			  </table>
-		  </div>
-	     
+         
+        <div class="container" style="margin-top:80px">
+           <h2>회원목록</h2>           
+           <table class="table table-striped">
+             <thead>
+               <tr>
+                 <th>이름</th>
+                 <th>학번</th>
+                 <th>삭제</th>
+               </tr>
+             </thead>
+             <tbody>
+                <c:forEach items="${list}" var="UserVO">
+                <tr>
+                   <td>${UserVO.uname}</td>
+                   <td>${UserVO.unumber}</td>
+                   <td><a href="/admin/memberDelete/${UserVO.unumber}">삭제</a></td>
+                </tr>   
+                </c:forEach>
+             </tbody>
+             
+           </table>
+        </div>
+        
     
      <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
      <script src="js/bootstrap.js"></script>

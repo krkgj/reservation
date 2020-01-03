@@ -6,7 +6,6 @@ public class LoginDTO {
 	private String unumber;
 	private String[] reservateTime;
 	private String seat;
-	private boolean useCookie;
 	
 	
 	public String getSeat() {
@@ -33,17 +32,11 @@ public class LoginDTO {
 	public void setUnumber(String unumber) {
 		this.unumber = unumber;
 	}
-	public boolean isUseCookie() {
-		return useCookie;
-	}
-	public void setUseCookie(boolean useCookie) {
-		this.useCookie = useCookie;
-	}
+	
 	
 	@Override
 	public String toString() {
-		return "LoginDTO [uname=" + uname + ", unumber=" + unumber + ", useCookie="
-				+ useCookie + "]";
+		return "LoginDTO [uname=" + uname + ", unumber=" + unumber + "]";
 	}
 	
 }

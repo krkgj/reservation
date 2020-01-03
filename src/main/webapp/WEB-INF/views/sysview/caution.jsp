@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset-UTF-8">
 <meta name="viewport" content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel = "shortcut icon" type = "image/png" href="/resources/image/Hansei.png"/>  <!-- favicon 추가 부분입니다. -->
 <title>100호실 예약 시스템</title>
 </head>
 <body>

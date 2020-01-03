@@ -42,7 +42,7 @@ public class UserController {
 				model.addAttribute("adminVO", vo);
 				
 				System.out.println(vo.getUname());
-				return "/admin/admin";
+				return "redirect:/admin/admin";
 			}
 			else
 			{

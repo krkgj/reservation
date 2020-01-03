@@ -25,6 +25,8 @@
    <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
  </bean>
  
+ <bean id="visitCountDAO" class="org.zerock.persistence.VisitCountDAOImpl"></bean>
+ 
  <context:component-scan base-package="org.zerock.persistence"></context:component-scan>
  <context:component-scan base-package="org.zerock.service"></context:component-scan>
  <context:component-scan base-package="org.zerock.domain"></context:component-scan>		

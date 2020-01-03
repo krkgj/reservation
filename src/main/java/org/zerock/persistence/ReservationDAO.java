@@ -10,7 +10,8 @@ import org.zerock.domain.SeatVO;
 public interface ReservationDAO {
 
 	public void reservationSeat(ReservationVO rvo);
-	public int duplicateCheck(ReservationVO rvo);
 	public SeatVO SeatStatus(String sno);
 	public void updateSeatStatus(SeatVO svo);
+	public int UserDuplicateCheck(String uname);
+//	public void UpdateSeatStatus_Cancel(String[] Time); // 경진이가 짜면 추가
 }

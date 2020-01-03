@@ -13,10 +13,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   update user_info set sessionKey = #{sessionId}, sessionLimit = #{next} where uname = #{uname}
   </update>
 
-	<select id="checkUserWithSessionKey" resultType="UserVO">
-	select * from tbl_user where sessionKey = #{value}  and sessionlimit > now()
-	</select>	
+	<select id="membership" resultType="UserVO">
+   select uname, unumber from user_info order by uname 
+   </select>
+   
+   <delete id="memberDelete">
+    delete from user_info where unumber = #{unumber} 
+    </delete>
+	
+	<select id="showUserinfo">
+	select * from reservation where seat = #{seat}
+	</select>
+	
+	<select id="usercancel" resultType="ReservationVO"> <!-- 예약테이블에 현재 접속한 사용자의 이름이 존재하는지 검사하는 쿼리입니다. -->
+	select * from reservation where uname = #{uname}
+	</select>
 
+   <delete id="UserCancelAction">
+    delete from reservation where uname = #{uname} 
+    </delete>
 </mapper>
 
 

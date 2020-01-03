@@ -1,7 +1,7 @@
 package org.zerock.persistence;
 
 import java.io.PrintWriter;
-import java.net.http.HttpResponse;
+//import java.net.http.HttpResponse;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.zerock.domain.ReservationVO;
 import org.zerock.domain.SeatVO;
 
-import com.sun.tools.javac.util.Names;
+//import com.sun.tools.javac.util.Names;
 
 @Repository
 public class ReservationDAOImpl implements ReservationDAO {
@@ -37,28 +37,31 @@ public class ReservationDAOImpl implements ReservationDAO {
 	@Override
 	public SeatVO SeatStatus(String sno)
 	{
-		System.out.println("dao : "+ sno);
 		SeatVO svo = session.selectOne(namespace+ ".seatstatus" , sno);
-		System.out.println("DB : "+svo.getSeat());
-		return svo;  
-		
+		return svo;  	
 	}
 	
-	@Override
-	public int duplicateCheck(ReservationVO rvo)
-	{
-		int value = 0;
-		value = session.selectOne(namespace + ".duplicateCheck", rvo);
-	    
-		return value;
-	}
 	   
 	@Override
 	public void updateSeatStatus(SeatVO svo)
 	{
-		System.out.println("updateSeatStatus 실행됨!"+ svo.getNineToTen());
 		session.selectOne(namespace + ".updateseatstatus", svo);	
 	}
+	
+	@Override
+	public int UserDuplicateCheck(String uname)
+	{
+		int value = 0; 
+		value = session.selectOne(namespace + ".UserDuplicateCheck", uname); // 예약을 한 사용자가 이미 예약목록 테이블에 존재하는지 안하는지 검사하는 코드입니다.
+		return value;  // 존재하게 되면 1이  존재하지않으면 0이 return 됩니다.
+	}
+	
+	
+	
+//	@Override  // 경진이가 짜면 추가
+//	public void UpdateSeatStatus_Cancel(String[] Time) {
+//		session.update(namespace + ".UpdateSeatStatus_Cancel",Time);
+//	}
 }
 
 

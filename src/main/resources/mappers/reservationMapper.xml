@@ -10,8 +10,8 @@ insert into reservation values(#{uname} ,#{unumber} , #{reserveStartTime} ,DATE_
  </insert>
 
 
-<select id="duplicateCheck" resultType="int">
-<![CDATA[SELECT COUNT(SEAT) FROM reservation WHERE reserveStartTime <= DATE_ADD(#{reserveEndTime}, INTERVAL 1 HOUR) AND reserveEndTime >= #{reserveStartTime}  AND SEAT=#{seat}]]>
+<select id="UserDuplicateCheck" resultType="int"> <!-- 예약을 한 사용자가 이미 예약목록 테이블에 존재하는지 안하는지 검사하는 코드입니다. -->
+select count(uname) from reservation where uname = #{uname}
 </select>
 
 
@@ -22,9 +22,12 @@ select * from reservation_seat where seat = #{seat}
 
 <update id="updateseatstatus">
 update reservation_seat set NineToTen = #{NineToTen}, TenToEleven = #{TenToEleven}, ElevenToTwelve = #{ElevenToTwelve}, TwelveThirteen = #{TwelveThirteen},
-ThirteenToFourteen = #{ThirteenToFourteen}, FifteenToSixteen = #{FifteenToSixteen}, SixteenToSeventeen = #{SixteenToSeventeen}, SeventeenToEightteen = #{SeventeenToEightteen},
+ThirteenToFourteen = #{ThirteenToFourteen},FourteenToFifteen = #{FourteenToFifteen}, FifteenToSixteen = #{FifteenToSixteen}, SixteenToSeventeen = #{SixteenToSeventeen}, SeventeenToEightteen = #{SeventeenToEightteen},
 EightteenToNineteen = #{EightteenToNineteen}, NineteenToTwenty = #{NineteenToTwenty}, TwentyToTwentyOne = #{TwentyToTwentyOne},
 TwentyOneToTwentyTwo = #{TwentyOneToTwentyTwo} where seat = #{seat}
 </update>
 
+	
+
+	
 </mapper>	

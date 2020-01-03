@@ -11,7 +11,7 @@ public class StringToDateConverter{
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 		Date afterConvert = formatter.parse(str);
-		
+	
 		return afterConvert;
 	}
 
