@@ -53,11 +53,7 @@ public class AdminController {
 			return "redirect:/sysview/wrongAccess";
 		}
 		  
-<<<<<<< HEAD
 		return "/admin/cancel";
-=======
-		return "/admin/admin";
->>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 	}
 	
 	/*
@@ -82,16 +78,11 @@ public class AdminController {
 	      return "/admin/membership";
 	   }
 	   
-<<<<<<< HEAD
-=======
-	   /* 삭제 */
->>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 	   @RequestMapping(value = "/memberDelete/{unumber}", method = RequestMethod.GET)
 	   public String memberDelete(@PathVariable String unumber) throws Exception
 	   {
 	      System.out.println(unumber);
 	      service.memberDelete(unumber);
-<<<<<<< HEAD
 	      
 	      return "redirect:/admin/membership";
 	   }
@@ -102,12 +93,6 @@ public class AdminController {
 		   
 	      return "/admin/seatedit";
 	   }
-=======
-	      System.out.println("삭제되었습니다");
-	      
-	      return "redirect:/admin/membership";
-	   }
 	
->>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 	
 }

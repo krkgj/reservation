@@ -38,7 +38,6 @@ public class UserServiceImpl implements UserService {
   public void memberDelete(String unumber) throws Exception{
      dao.memberDelete(unumber);
   }
-<<<<<<< HEAD
   
   @Override
   public ReservationVO usercancel(String uname) { // 예약테이블에 현재 접속한 사용자의 이름이 존재하는지 검사
@@ -50,11 +49,4 @@ public class UserServiceImpl implements UserService {
 	  dao.UserCancelAction(uname);
   }
   
-//  @Override
-//  public ReservationVO usercancel(String uname) { // 예약테이블에 현재 접속한 사용자의 이름이 존재하는지 검사
-//	  System.out.println("USER cancel 서비스 호출!");
-//	  return dao.UserCancel(uname);
-//  }
-=======
->>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 }

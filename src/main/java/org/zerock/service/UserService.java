@@ -17,15 +17,10 @@ public interface UserService {
 
 public List<UserVO> membership()  throws Exception;
 
-<<<<<<< HEAD
-void memberDelete(String unumber) throws Exception;
+public void memberDelete(String unumber) throws Exception;
 
-void UserCancelAction(String uname);
+public void UserCancelAction(String uname);
 
-ReservationVO usercancel(String uname);  
-
+public ReservationVO usercancel(String uname);
 // public ReservationVO usercancel(String uname);
-=======
-void memberDelete(String unumber) throws Exception;  
->>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 }

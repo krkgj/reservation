@@ -19,15 +19,11 @@ List<UserVO> membership() throws Exception;
 
 void memberDelete(String unumber) throws Exception;
 
-<<<<<<< HEAD
 void UserCancelAction(String uname);
 
 ReservationVO UserCancel(String uname);
 
 //public ReservationVO UserCancel(String uname); 
-=======
-  
->>>>>>> c2b6e68700561b4d708416b45daaee4308b311fc
 }
 
 
